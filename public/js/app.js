@@ -1,4 +1,4 @@
-var app = angular.module('scotcha', ['ui.router']);
+var app = angular.module('scotcha', ['ui.router','geolocation']);
 
 
 

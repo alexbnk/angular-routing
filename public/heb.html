@@ -1,6 +1,26 @@
 <div class="page-header">
-  <h1>Shabath and times</h1>
+  <h1 style="direction: rtl;">שבת</h1>
 </div>
-<div class="rtl" ng-controller="hebCtrl">
-<h1>{{data.items[0].hebrew}}</h1>
+<div  ng-controller="hebCtrl" style="direction:rtl;">
+
+<div ng-if="!coords">
+<h1> מחםש מיקום<img ng-src="/img/ajax-loader.gif"/></h1>
+  </div>
+
+  <div ng-if="city">
+    <iframe width="100%" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=tel-aviv&key=AIzaSyAtWG8jF_Jt01IHncBfQHkY3xfmWD9ncjY" allowfullscreen></iframe>
+  <h1> {{city}}</h1>
+    </div>
+
+<div ng-if="coords">
+<div ng-if="!data"><img ng-src="/img/ajax-loader.gif"/></div>
+<div ng-if="data">
+<h2>{{data.items[0].hebrew}}</h2>
+<h2>{{data.items[1].hebrew}}</h2>
+<h2>{{data.items[2].hebrew}}</h2>
+<h2>{{data.items[3].hebrew}}</h2>
+<h2>{{data.items[4].memo}}</h2>
+</div>
+<!-- <h3> Your location: {{coords.lat}},{{coords.long}}</h3> -->
+</div>
 </div>
